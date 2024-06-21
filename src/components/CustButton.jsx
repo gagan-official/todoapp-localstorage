@@ -1,4 +1,4 @@
-import { btnHover, commonRounded } from "../App";
+import { btnHover, commonRounded } from "../Todo1";
 
 function CustButton(props) {
   const { className, children } = props;

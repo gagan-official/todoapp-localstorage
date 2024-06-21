@@ -10,3 +10,22 @@
     padding: 2rem 1rem;
   }
 }
+
+.animatedCont {
+  animation: toastAnimation 3s;
+}
+
+@keyframes toastAnimation {
+  0% {
+    top: -10%;
+  }
+  30% {
+    top: 0;
+  }
+  70% {
+    top: 0;
+  }
+  100% {
+    top: -10%;
+  }
+}

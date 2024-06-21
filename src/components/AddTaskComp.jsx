@@ -1,5 +1,5 @@
+import { commonRounded } from "../Todo1";
 import CustButton from "./CustButton";
-import { commonRounded } from "../App";
 
 function AddTaskComp({ custButtonProps, inputProps, formOnSubmit }) {
   return (
