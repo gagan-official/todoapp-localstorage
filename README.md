@@ -4,7 +4,7 @@
 A simple Todo application built with React and Vite that uses the browser's local storage to persist tasks. It allows you to add, delete, and mark tasks as completed.
 
 ## Demo
-You can view a live demo of the application [here](https://todoapp-gagan.netlify.app).
+You can view a live demo of the application <a href="https://todoapp-gagan.netlify.app/" target="_blank">here</a>.
 
 ## Features
 - Add new tasks
