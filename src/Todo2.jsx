@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import { MdCheck } from "react-icons/md";
 const commonBtnClass = "text-white px-3 py-1 rounded-lg hover:opacity-85";
 
@@ -57,59 +57,61 @@ export default function Todo2() {
 
   return (
     <>
-      {/* {<Toast/>} */}
-      {toast.toast && <Toast toastMsg={toast.msg} id={toast.id}  />}
-      <h1 className="text-2xl font-bold mb-4">Todo App</h1>
-      <CustInput
-        value={val}
-        onChange={(e) => setVal(e.target.value)}
-        handleSubmit={handleSubmit}
-        inputProps={{ placeholder: "Enter your task" }}
-      />
-      <div className="mt-4 flex flex-col gap-3">
-        {data.length ? (
-          data.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="border rounded-xl p-2 pl-4 flex justify-between items-center gap-2"
-              >
-                {editId === index ? (
-                  <CustInput
-                    value={editVal}
-                    onChange={(e) => setEditVal(e.target.value)}
-                    handleSubmit={(e) => handleEdit(e, index)}
-                    inputProps={{
-                      placeholder: "Edit your task",
-                      autoFocus: true,
-                    }}
-                  />
-                ) : (
-                  `${index + 1}. ${item.task}`
-                )}
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => {
-                      setEditId(index);
-                      setEditVal(item.task);
-                    }}
-                    className={`${commonBtnClass} bg-green-600`}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete(index)}
-                    className={`${commonBtnClass} bg-red-600`}
-                  >
-                    Delete
-                  </button>
+      {toast.toast && <Toast toastMsg={toast.msg} id={toast.id} />}
+      <div className="max-w-lg relative left-[50%] translate-x-[-50%]">
+        {/* {<Toast/>} */}
+        <h1 className="text-2xl font-bold mb-4">Todo App</h1>
+        <CustInput
+          value={val}
+          onChange={(e) => setVal(e.target.value)}
+          handleSubmit={handleSubmit}
+          inputProps={{ placeholder: "Enter your task" }}
+        />
+        <div className="mt-4 flex flex-col gap-3">
+          {data.length ? (
+            data.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="border rounded-xl p-2 pl-4 flex justify-between items-center gap-2"
+                >
+                  {editId === index ? (
+                    <CustInput
+                      value={editVal}
+                      onChange={(e) => setEditVal(e.target.value)}
+                      handleSubmit={(e) => handleEdit(e, index)}
+                      inputProps={{
+                        placeholder: "Edit your task",
+                        autoFocus: true,
+                      }}
+                    />
+                  ) : (
+                    `${index + 1}. ${item.task}`
+                  )}
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => {
+                        setEditId(index);
+                        setEditVal(item.task);
+                      }}
+                      className={`${commonBtnClass} bg-green-600`}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDelete(index)}
+                      className={`${commonBtnClass} bg-red-600`}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })
-        ) : (
-          <span className="text-gray-400 italic">No tasks yet.</span>
-        )}
+              );
+            })
+          ) : (
+            <span className="text-gray-400 italic">No tasks yet.</span>
+          )}
+        </div>
       </div>
     </>
   );
@@ -159,7 +161,7 @@ function CommonToast(props) {
   return (
     <div
       key={props.id}
-      className={`animatedCont top-0 left-0 p-3 w-full flex items-center justify-center gap-2 absolute ${colorClass}`}
+      className={`animatedCont top-0 left-0 p-3 w-full flex items-center justify-center gap-2 absolute z-10 ${colorClass}`}
     >
       {color === "green"
         ? `Task ${props.id} modified`
