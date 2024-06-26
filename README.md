@@ -1,8 +1,42 @@
-# React + Vite
+# Todo App with Local Storage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+A simple Todo application built with React and Vite that uses the browser's local storage to persist tasks. It allows you to add, delete, and mark tasks as completed.
 
-Currently, two official plugins are available:
+## Demo
+You can view a live demo of the application [here](https://todoapp-gagan.netlify.app).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Add new tasks
+- Delete existing tasks
+- Mark tasks as completed
+- Persist tasks using local storage
+
+## Installation
+1. Clone the repository
+   ```sh
+   git clone https://github.com/gagan-official/todoapp-localstorage.git
+   ```
+2. Navigate to the project directory
+   ```sh
+   cd todoapp-localstorage
+   ```
+3. Install dependencies
+   ```sh
+   npm install
+   ```
+4. Start the development server
+   ```sh
+   npm run dev
+   ```
+
+## Usage
+- Add a new task by typing in the input field and pressing Enter or clicking the "Add" button.
+- Delete a task by clicking the "Delete" button next to the task.
+- Mark a task as completed by clicking the task.
+
+## Contributing
+Contributions are welcome! Please fork this repository and submit a pull request with your changes.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
